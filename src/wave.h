@@ -22,6 +22,10 @@
 
 #include "siddefs.h"
 
+#ifndef PROGMEM
+#include "pgmspace.h"
+#endif
+
 // ----------------------------------------------------------------------------
 // A 24 bit accumulator is the basis for waveform generation. FREQ is added to
 // the lower 16 bits of the accumulator each cycle.
@@ -97,15 +101,15 @@ protected:
   RESID_INLINE reg12 outputNPST();
 
   // Sample data for combinations of waveforms.
-  static reg8 wave6581__ST[];
-  static reg8 wave6581_P_T[];
-  static reg8 wave6581_PS_[];
-  static reg8 wave6581_PST[];
+  static reg8 PROGMEM wave6581__ST[];
+  static reg8 PROGMEM wave6581_P_T[];
+  static reg8 PROGMEM wave6581_PS_[];
+  static reg8 PROGMEM wave6581_PST[];
 
-  static reg8 wave8580__ST[];
-  static reg8 wave8580_P_T[];
-  static reg8 wave8580_PS_[];
-  static reg8 wave8580_PST[];
+  static reg8 PROGMEM wave8580__ST[];
+  static reg8 PROGMEM wave8580_P_T[];
+  static reg8 PROGMEM wave8580_PS_[];
+  static reg8 PROGMEM wave8580_PST[];
 
   reg8* wave__ST;
   reg8* wave_P_T;
